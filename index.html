@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Conceptual: Entendiendo la Tecnología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            /* Added background image */
+            background-image: url('persona.png');
+            background-size: cover; /* This will make the background image cover the entire body */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-attachment: fixed; /* Keep the background fixed when scrolling */
+            position: relative; /* Needed for absolute positioning of the button */
+            min-height: 100vh; /* Ensure body takes at least full viewport height for positioning */
+        }
+        .mindmap {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: transparent; /* Changed to transparent */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: none; /* Removed box shadow */
+            position: relative;
+        }
+        .node {
+            border: 2px solid #007bff;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #e7f3ff;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .main-topic {
+            background-color: #007bff;
+            color: white;
+            border-color: #0056b3;
+            font-size: 1.5em;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
+        }
+        .sub-topic {
+            background-color: #6c757d;
+            color: white;
+            border-color: #5a6268;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        .detail {
+            background-color: #f0f0f0;
+            color: #333;
+            border-color: #ccc;
+            font-size: 0.9em;
+            margin: 5px 0;
+            text-align: left;
+            padding: 8px 12px;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .column {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .arrow {
+            position: absolute;
+            background-color: #007bff;
+            height: 2px;
+            transform-origin: 0 50%;
+            z-index: 5;
+        }
+        .arrow::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #007bff;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            right: -2px;
+            top: -5px;
+        }
+
+        /* Simpler connection visualization for HTML concept map */
+        .connector {
+            text-align: center;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        /* Kahoot Button Styling */
+        .kahoot-button {
+            position: absolute;
+            top: 20px; /* Adjust as needed for desired spacing from top */
+            right: 20px; /* Adjust as needed for desired spacing from right */
+            background-color: #4CAF50; /* Green color, common for action buttons */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none; /* Remove underline from link */
+            font-size: 1em;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's above other content */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .kahoot-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://play.kahoot.it/v2/lobby?quizId=61ce7255-13b3-45bf-bcd0-0e67d08da9e8" target="_blank" class="kahoot-button">
+        Ir a Kahoot!
+    </a>
+
+    <div class="mindmap">
+        <div class="node main-topic">INTRODUCCION GENERAL: Entendiendo la Tecnologia en Sentido Amplio</div>
+
+        <div class="connector">&#8595;</div>
+
+        <div class="node sub-topic">La tecnologia no es solo objetos materiales</div>
+        <div class="node detail">Procesos y actividades tambien son productos tecnologicos.</div>
+        <div class="node detail">Ejemplo: La educacion escolar (organizacion de clase, recursos, metodos).</div>
+        <div class="node detail">Ejemplo: Organizacion del trabajo, administracion, psicologia laboral.</div>
+        <div class="node detail">Caso: Empresa dise&ntilde;a un metodo de capacitacion (producto tecnologico no material).</div>
+
+        <div class="connector">&#8595;</div>
+
+        <div class="node sub-topic">Clasificacion de Tecnologias: Duras y Blandas</div>
+
+        <div class="flex-container">
+            <div class="column">
+                <div class="node sub-topic">Tecnologias Duras</div>
+                <div class="node detail">Se basan en ciencias (fisica, quimica, biologia).</div>
+                <div class="node detail">Producen objetos concretos.</div>
+                <div class="node detail">Ejemplos:</div>
+                <div class="node detail">- Mecanica</div>
+                <div class="node detail">- Electronica</div>
+                <div class="node detail">- Ingenieria industrial</div>
+                <div class="node detail">- Alimentaria</div>
+                <div class="node detail">- Farmaceutica</div>
+            </div>
+
+            <div class="column">
+                <div class="node sub-topic">Tecnologias Blandas</div>
+                <div class="node detail">Se basan en procesos intelectuales.</div>
+                <div class="node detail">No producen objetos, mejoran el funcionamiento.</div>
+                <div class="node detail">Ejemplos:</div>
+                <div class="node detail">- Administracion</div>
+                <div class="node detail">- Marketing</div>
+                <div class="node detail">- Educacion</div>
+                <div class="node detail">- Psicologia del trabajo</div>
+            </div>
+        </div>
+
+        <div class="connector">&#8595;</div>
+
+        <div class="node sub-topic">Caso Aplicado: Television y Radio (Combinacion de Tecnologias)</div>
+        <div class="node detail">Parte Dura: Material (componentes electronicos, se&ntilde;al, transmision).</div>
+        <div class="node detail">Parte Blanda: No Material (eleccion de programas, mensajes, grilla, audiencia).</div>
+        <div class="node detail">Ejemplo Noticiero:</div>
+        <div class="node detail">- Duro: Camara, antena, microfono.</div>
+        <div class="node detail">- Blando: Decision de noticias, orden, enfoque.</div>
+
+        <div class="connector">&#8595;</div>
+
+        <div class="node main-topic">CIERRE FINAL</div>
+        <div class="node detail">La tecnologia no es solo objetos materiales.</div>
+        <div class="node detail">Incluye conocimientos, metodos y decisiones.</div>
+        <div class="node detail">Se divide en tecnologias duras y blandas, a menudo combinadas.</div>
+
+    </div>
+
+</body>
+</html>
